@@ -7,8 +7,7 @@ function AgeAsDog(age){
 var x = AgeAsDog(15);
 document.write(x);
 
-//Debugging given code
-
+//2 Debugging given code
 /*
 var i = 5; var j = 10
 // a string cannot be a sting without putting it in "" or ''
