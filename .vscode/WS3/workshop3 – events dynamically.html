@@ -104,7 +104,7 @@ var persons = ["Nyssa P. Skinner", "593-4241 Lacus, St.","Cape Verde",
 
 </xmp>
 </ul>
-<!-- Added events-->
+<!-- Added ids-->
 <h2 id="mouse">Exercise 2</h2>
 <ul>
   <li>Add an&nbsp;onMouseOver event on the&nbsp;Heading "Exercise 2" of this page.&nbsp;It should&nbsp;fire when the users mouse is moved
@@ -153,6 +153,7 @@ The second button should show your location on a Google Maps. You can see the ma
 "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false" where latlon is your latitude + longitute data separated by 
 comma (,).
 </li>
+
 <script>
   // Exercise 1
   // Button 1 Event
@@ -272,6 +273,6 @@ comma (,).
     console.log("Latitude: " + position.coords.latitude + "<br>Longtitude: " + position.coords.longitude);
     document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
   }
-  
+
   </script>
 </html>
