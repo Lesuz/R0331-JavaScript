@@ -61,8 +61,25 @@ function buttonThree(){
 	       "Camilla F. Strickland","391-2150 Ac Rd.","Andorra",
 	       "Reagan U. Andrews", "P.O. Box 472, 2271 Mauris Ave","Faroe Islands",
 	       "Kelsey D. Clark", "P.O. Box 866, 7793 Aliquet Ave","Bulgaria"
-];
-// TODO: use loop to print out the table persons
+  ];
+
+  let table = document.createElement('table');
+  let row = table.insertRow();
+  let cell = row.insertCell();
+
+  cell.textContent = "Name";
+  cell = row.insertCell();
+  cell.textContent = "Address";
+  cell = row.insertCell();
+  cell.textContent = "Country";
+  for(var o = 0; o <= 3; o++){
+    row = table.insertRow();
+    for(var p = 0; p <= 2; p++){
+      cell = row.insertCell();
+      cell.textContent = persons[(o*3) +p] ;
+    }
+  }
+  document.getElementById("personsTable").appendChild(table); 
 }
 
 // Exercise 2
@@ -87,19 +104,15 @@ function TextAreaText(){
   console.log(keydown);
   document.getElementById("presses").innerHTML = "Keypresses: " + keydown;
 }
-// TODO - function does not work for some reason
-// Clicking on button does not active the function, reson: I dont know YET
 function sendButton() {
-  console.log("Yes?");
-  /*var z = document.getElementById("textarea").value
-  if (z.value === "" || z.value == " "){
+
+  var z = document.getElementById("textdata").value ;
+  if (z === "" || z === " "){
     document.getElementById("warning").innerHTML="Text area is empty!" ;
   } else {
     document.getElementById("warning").innerHTML = "Text area has text in it!";
-  }*/
+  }
 }
-// Exercise 4
-// TODO - first get everything else to work before this
 
 // Exercise 5
 function showXY(event) {
@@ -131,7 +144,7 @@ function showPosition(position){
 }
 
 function showOnMap(){
-  
+
 }
 </script>
 
@@ -149,7 +162,7 @@ good idea to save the lines of code you write during the exercises for later use
   <button onclick="buttonTwo()">Button 2</button>
   <button onclick="buttonThree()">Button 3</button>
 </p>
-
+<p id="personsTable"></p>
 <ul>
   <li>Button 1 should open an alert-button, which will say "You clicked me!" </li>
   <li> When you see the button working, add the current date after the text by using the Date() -function. HINT. You can get spesific parts of the date by first creating a date 
@@ -244,8 +257,8 @@ command:   <i>document.getElementById("textdata").value</i>. We will study the f
   <textarea id="textdata" onfocus="TextAreaText()" onkeydown="TextAreaText()"></textarea><br>
   <p id="presses"></p>
   <p id="warning"></p>
-  <button onclick="sendButton()">Send me</button>
 </form>
+<button onclick="sendButton()">Send me</button>
 <h2>Exercise 4</h2>
 So far you have hardcoded the events into HTML tags. Make a copy of your exercise file and try to add the events dynamically, without touching the HTML at all. This can be 
 achieved using addEventListener() -function, <a target="_blank" href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp"> see more here</a>.
