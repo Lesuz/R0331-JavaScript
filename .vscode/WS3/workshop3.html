@@ -76,6 +76,7 @@ function buttonThree(){
     row = table.insertRow();
     for(var p = 0; p <= 2; p++){
       cell = row.insertCell();
+      // o*3 because the table is one dimensional - every third index is the name, address and country
       cell.textContent = persons[(o*3) +p] ;
     }
   }
