@@ -38,7 +38,14 @@ function buttonTwo(){
 // Button 3
 function buttonThree(){
   var appendText = document.getElementsByTagName('p')[3];
+  // I added line change in the beginning to make the next assignment clearer
   appendText.innerHTML += "<br><em>&quot;Lorem ipsum dolor sit amet, consectetuer   adipiscing elit. Sed posuere interdum sem. Quisque ligula eros   ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam   vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget   velit. &quot;</em> <img height = 20 width = 20 src='https://p1.hiclipart.com/preview/951/574/485/react-logo-javascript-redux-vuejs-angular-angularjs-expressjs-front-and-back-ends-png-clipart.jpg'>";
+  document.body.style.backgroundColor = "#ff9999";
+  // Teacher's answer
+  /* var ptags = document.getElementsByTag('p');
+  var emtags = document.getElementsByTag('em');
+  ptags[3].innerHTML += emtags[1].innerHTML;
+  */
 }
 
 // Exercise 2
@@ -52,8 +59,7 @@ function show(){
 function surprise(){
   var classSurprise = document.getElementsByClassName('surprise');
   for (var i = 0; i < classSurprise.length; i++){
-    var classes = classSurprise[i];
-    classes.style.fontSize = 20;
+    classSurprise[i].style.fontSize = 20;
   }
 }
 
@@ -90,21 +96,27 @@ function pictureChange(){
 var picture = document.getElementById('carimage');
 // Exercise 4
 function changePosition(){
-  //var divMoved = document.getElementById('carimage');
-  picture.style.left = -200+'px';
-  picture.style.top = 500+'px';
+  document.getElementById('carimage').style.position =  "relative";
+  document.getElementById('carimage').style.left = -200;
+  document.getElementById('carimage').style.top = 500;
 }
-// TODO - the rest of exercise 4
 function doMove(){
-  //var picture = document.getElementById('carimage');
-  for(var i = 0; i <= screen.width; i++){
-    picture.style.left = i+'px';
+  var img = document.getElementById('carimage');
+  img.position = "relative";
+
+  var left = parseInt(img.style.left);
+  if (left == "" || left == null){
+    left = 0;
+    img.style.left = (left+10);
   }
 }
 function fadeOut(){
+  var opacityNow = document.getElementById('carimage');
+  // Change opacity by 0.1 every 1000 ms
+  opacityNow.style.opacity -= 0.1;
 }
 function hide(){
-  picture.style.display="delete";
+  document.getElementById('carimage').style.display="none";
 }
 // Exercise 5
 // Adding row with preset values
